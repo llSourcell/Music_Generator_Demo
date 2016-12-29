@@ -1,4 +1,4 @@
-	#This file is heavily based on Daniel Johnson's midi manipulation code in https://github.com/hexahedria/biaxial-rnn-music-composition
+#This file is heavily based on Daniel Johnson's midi manipulation code in https://github.com/hexahedria/biaxial-rnn-music-composition
 
 import numpy as np
 import pandas as pd
@@ -34,7 +34,7 @@ print "{} songs processed".format(len(songs))
 # First, let's take a look at the hyperparameters of our model:
 
 lowest_note = midi_manipulation.lowerBound #the index of the lowest note on the piano roll
-highest_note = midi_manipulation.upperBound #	the index of the highest note on the piano roll
+highest_note = midi_manipulation.upperBound #the index of the highest note on the piano roll
 note_range = highest_note-lowest_note #the note range
 
 num_timesteps  = 15 #This is the number of timesteps that we will create at a time
