@@ -74,8 +74,8 @@ def gibbs_sample(k):
 
     #Run gibbs steps for k iterations
     ct = tf.constant(0) #counter
-    [_, _, x_sample] = control_flow_ops.While(lambda count, num_iter, *args: count < num_iter,
-                                         gibbs_step, [ct, tf.constant(k), x], 1, False)
+    [_, _, x_sample] = control_flow_ops.while_loop(lambda count, num_iter, *args: count < num_iter,
+                                         gibbs_step, [ct, tf.constant(k), x])
     #This is not strictly necessary in this implementation, but if you want to adapt this code to use one of TensorFlow's
     #optimizers, you need this in order to stop tensorflow from propagating gradients back through the gibbs step
     x_sample = tf.stop_gradient(x_sample) 
@@ -105,7 +105,7 @@ updt = [W.assign_add(W_adder), bv.assign_add(bv_adder), bh.assign_add(bh_adder)]
 with tf.Session() as sess:
     #First, we train the model
     #initialize the variables of the model
-    init = tf.initialize_all_variables()
+    init = tf.global_variables_initializer()
     sess.run(init)
     #Run through all of the training data num_epochs times
     for epoch in tqdm(range(num_epochs)):
