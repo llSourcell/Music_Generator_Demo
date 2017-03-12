@@ -12,7 +12,7 @@ Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann
 * glob
 * tqdm 
 
-Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies (i.e pip install msgpack) 
+Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies (i.e pip install msgpack-python) 
 
 ##Basic Usage
 To train the model and create music, simply clone this directory and run
