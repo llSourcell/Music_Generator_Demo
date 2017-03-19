@@ -1,7 +1,7 @@
 # Music Generator Demo
 
 ##Overview
-Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann Machine](http://deeplearning4j.org/restrictedboltzmannmachine.html). This is the code for [Generate Music in TensorFlow](https://www.youtube.com/watch?v=4DMm5Lhey1U) on YouTube. 
+Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann Machine](http://deeplearning4j.org/restrictedboltzmannmachine.html). This is the code for [Generate Music in TensorFlow](https://www.youtube.com/watch?v=ZE7qWXX05T0) on YouTube. 
 
 ##Dependencies
 
