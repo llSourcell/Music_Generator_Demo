@@ -1,7 +1,7 @@
 # Music Generator Demo
 
 ##Overview
-Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann Machine](http://deeplearning4j.org/restrictedboltzmannmachine.html). This is the code for [Generate Music in TensorFlow]() on YouTube. 
+Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann Machine](http://deeplearning4j.org/restrictedboltzmannmachine.html). This is the code for [Generate Music in TensorFlow]() on YouTube.
 
 ##Dependencies
 
@@ -10,9 +10,16 @@ Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann
 * numpy
 * msgpack
 * glob
-* tqdm 
+* tqdm
 
-Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies (i.e pip install msgpack) 
+Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies (i.e pip install msgpack)
+> pip install pandas
+> pip install numpy
+> pip install msgpack-python
+> pip install glob
+> pip install tqdm
+> On Python 3.* use git to install python-midi:
+> ``` pip install git+https://github.com/vishnubob/python-midi@feature/python3 ```
 
 ##Basic Usage
 To train the model and create music, simply clone this directory and run
@@ -20,7 +27,7 @@ To train the model and create music, simply clone this directory and run
 python rbm_chords.py
 ```
 
-The training data goes in the pop_music_midi folder. You have to use MIDI files. You can find some [here](http://www.midiworld.com/files/). Training will take 5-10 minutes on a modern laptop. The output will be a collection of midi files. You can combine them together with a script if you'd like. 
+The training data goes in the pop_music_midi folder. You have to use MIDI files. You can find some [here](http://www.midiworld.com/files/). Training will take 5-10 minutes on a modern laptop. The output will be a collection of midi files. You can combine them together with a script if you'd like.
 
 ##Challenge
 
@@ -28,4 +35,4 @@ The challenge for this video is to create a happy/upbeat MIDI file using this sc
 
 ##Credits
 
-The credit for this code goes to [dshieble](https://github.com/dshieble) i've merely created a wrapper around his code to make it easier to get started. 
+The credit for this code goes to [dshieble](https://github.com/dshieble) i've merely created a wrapper around his code to make it easier to get started.
