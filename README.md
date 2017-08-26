@@ -13,13 +13,13 @@ Use TensorFlow to generate short sequences of music with a [Restricted Boltzmann
 * tqdm
 
 Use [pip](https://pypi.python.org/pypi/pip) to install any missing dependencies (i.e pip install msgpack)
-> pip install pandas
-> pip install numpy
-> pip install msgpack-python
-> pip install glob
-> pip install tqdm
-> On Python 3.* use git to install python-midi:
-> ``` pip install git+https://github.com/vishnubob/python-midi@feature/python3 ```
+> pip install pandas <br>
+> pip install numpy <br>
+> pip install msgpack-python <br>
+> pip install glob <br>
+> pip install tqdm <br>
+> On Python 3.* use git to install python-midi: <br>
+> ``` pip install git+https://github.com/vishnubob/python-midi@feature/python3 ```  <br>
 
 ##Basic Usage
 To train the model and create music, simply clone this directory and run
