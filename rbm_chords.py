@@ -7,6 +7,7 @@ import glob
 import tensorflow as tf
 from tensorflow.python.ops import control_flow_ops
 from tqdm import tqdm
+import argparse
 
 ###################################################
 # In order for this code to work, you need to place this file in the same
@@ -26,7 +27,12 @@ def get_songs(path):
             raise e
     return songs
 
-songs = get_songs('Pop_Music_Midi') #These songs have already been converted from midi to msgpack
+parser = argparse.ArgumentParser()
+parser.add_argument("path")
+args = parser.parse_args()
+print(args.path)
+
+songs = get_songs(args.path) #These songs have already been converted from midi to msgpack
 print ("{} songs processed".format(len(songs)))
 ###################################################
 
@@ -122,10 +128,16 @@ with tf.Session() as sess:
 
     #Now the model is fully trained, so let's make some music!
     #Run a gibbs chain where the visible nodes are initialized to 0
+    songs = np.zeros((0,156))
     sample = gibbs_sample(1).eval(session=sess, feed_dict={x: np.zeros((10, n_visible))})
     for i in range(sample.shape[0]):
         if not any(sample[i,:]):
             continue
         #Here we reshape the vector to be time x notes, and then save the vector as a midi file
-        S = np.reshape(sample[i,:], (num_timesteps, 2*note_range))
-        midi_manipulation.noteStateMatrixToMidi(S, "generated_chord_{}".format(i))
+        song = np.reshape(sample[i,:], (num_timesteps, 2*note_range))
+
+        if np.array(song).shape[0] > 10:
+            songs = np.concatenate((songs,song), axis=0)
+            #print(songs)
+            midi_manipulation.noteStateMatrixToMidi(songs, "final")
+    print('finished')
