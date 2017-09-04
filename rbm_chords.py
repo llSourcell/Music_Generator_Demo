@@ -27,7 +27,7 @@ def get_songs(path):
     return songs
 
 songs = get_songs('Pop_Music_Midi') #These songs have already been converted from midi to msgpack
-print "{} songs processed".format(len(songs))
+print ("{} songs processed".format(len(songs)))
 ###################################################
 
 ### HyperParameters
