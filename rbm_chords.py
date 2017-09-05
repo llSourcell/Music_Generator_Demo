@@ -27,7 +27,7 @@ def get_songs(path):
     return songs
 
 songs = get_songs('Pop_Music_Midi') #These songs have already been converted from midi to msgpack
-# print ("{} songs processed".format(len(songs)))
+print ("{} songs processed".format(len(songs)))
 ###################################################
 
 ### HyperParameters
@@ -122,7 +122,7 @@ with tf.Session() as sess:
 
     #Now the model is fully trained, so let's make some music! 
     #Run a gibbs chain where the visible nodes are initialized to 0
-    sample = gibbs_sample(1).eval(session=sess, feed_dict={x: np.zeros((10, n_visible))})
+    sample = gibbs_sample(1).eval(session=sess, feed_dict={x: np.zeros((50, n_visible))})
     for i in range(sample.shape[0]):
         if not any(sample[i,:]):
             continue

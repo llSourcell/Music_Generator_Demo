@@ -3,6 +3,7 @@
 import numpy as np
 from tqdm import tqdm
 import glob
+#sudo pip install msgpack-python
 import msgpack
 import midi_manipulation
 
